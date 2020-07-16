@@ -1,0 +1,19 @@
+---
+- name: Crear usuarios
+  hosts: all
+  vars:
+    upassword: Password1!
+    
+  tasks:
+    - name: Creando el usuario "{{ item }}" 
+      user:
+        name: "{{ item }}"
+        password: "{{ upassword | password_hash('sha512') }}"
+        comment: "Creado con Ansible"
+        update_password: on_create
+      with_items: "{{ username }}  
+      register: usario
+      
+#    - name: Forzar cambio de Password
+#      shell: chage -d 0 {{ uusername }}
+#      when: usario.changed
