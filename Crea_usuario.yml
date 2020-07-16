@@ -1,13 +1,13 @@
 ---
 - name: Crear usuarios
   hosts: all
-  vars:
-    password: Password1!
+  #vars:
+    #password: Password1!
     
   tasks:
     - name: Crear Usuario
       user: 
         name: tset
-        password: {{password}}
+        password: Password1!
       
     
