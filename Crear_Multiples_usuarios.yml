@@ -11,9 +11,14 @@
         password: "{{ upassword | password_hash('sha512') }}"
         comment: "Creado con Ansible"
         update_password: on_create
-      with_items: "{{ username }}"  
+      with_items: "{{ username }}"
+      when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux' or ansible_distribution_file_variety == 'RedHat'      
       register: usario
+            
       
 #    - name: Forzar cambio de Password
 #      shell: chage -d 0 {{ uusername }}
 #      when: usario.changed
+
+
+
