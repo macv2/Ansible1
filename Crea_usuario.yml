@@ -14,5 +14,5 @@
       register: usario
       
     - name: Forzar cambio de Password
-      Shell: chage -d 0 {{ uusername }}
+      shell: chage -d 0 {{ uusername }}
       when: usario.changed
