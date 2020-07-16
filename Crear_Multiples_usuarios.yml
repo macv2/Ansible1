@@ -11,7 +11,9 @@
         password: "{{ upassword | password_hash('sha512') }}"
         comment: "Creado con Ansible"
         update_password: on_create
-      with_items: "{{ username }}  
+      with_items: 
+        - Pedro
+        - Jose      
       register: usario
       
 #    - name: Forzar cambio de Password
