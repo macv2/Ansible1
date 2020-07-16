@@ -7,7 +7,7 @@
   tasks:
     - name: Crear Usuario
       user: 
-      name=tset
-      password={{password}}
+        name: tset
+        password: {{password}}
       
     
