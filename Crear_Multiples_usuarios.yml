@@ -5,7 +5,7 @@
     upassword: Password1!
     
   tasks:
-    - name: Creando el usuario "{{ item }}" 
+    - name: Creando el usuarios 
       user:
         name: "{{ item }}"
         password: "{{ upassword | password_hash('sha512') }}"

@@ -3,10 +3,11 @@
   hosts: all
     
   tasks:
-    - name: Revover el usuario "{{ uusername }}" 
+    - name: Remover el usuarios 
       user:
-        name: "{{ uusername }}"
+        name: "{{ item }}"
         state: absent
         remove: yes
+      with_items: "{{ username }}"
 
 ...
