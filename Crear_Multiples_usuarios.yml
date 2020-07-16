@@ -5,15 +5,13 @@
     upassword: Password1!
     
   tasks:
-    - name: Creando el usuario "{{ item }}" 
+    - name: Creando el usuario   #"{{ item }}" 
       user:
         name: "{{ item }}"
         password: "{{ upassword | password_hash('sha512') }}"
         comment: "Creado con Ansible"
         update_password: on_create
-      with_items: 
-        - Pedro
-        - Jose      
+      with_items: "{{ username }}"  
       register: usario
       
 #    - name: Forzar cambio de Password
