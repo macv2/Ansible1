@@ -1,0 +1,12 @@
+---
+- name: Remover usuarios
+  hosts: all
+    
+  tasks:
+    - name: Revover el usuario "{{ uusername }}" 
+      user:
+        name: "{{ uusername }}"
+        state: absent
+        remove: yes
+
+...
