@@ -1,6 +1,7 @@
 ---
 - name: Remover usuarios
   hosts: all
+  gather_facts: no
     
   tasks:
     - name: Remover el usuarios 
