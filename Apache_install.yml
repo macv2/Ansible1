@@ -1,6 +1,8 @@
 ---
 - name: Apache server installed
   hosts: all
+  gather_facts: no
+  
   tasks:
   - name: latest Apache version installed
     yum:
