@@ -1,6 +1,7 @@
 ---
 - name: Crear usuarios
   hosts: all
+  gather_facts: no
   vars:
     upassword: Password1!
     
