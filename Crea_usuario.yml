@@ -1,6 +1,7 @@
 ---
 - name: Crear usuario
   hosts: all
+  gather_facts: no
     
   tasks:
     - name: Creando el usuario "{{ uusername }}" 
